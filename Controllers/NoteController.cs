@@ -1,6 +1,6 @@
 ﻿using NoteMe.Data;
-using NoteMe.Services;
 using NoteMe.Models;
+using NoteMe.Services;
 
 namespace NoteMe.Controllers;
 

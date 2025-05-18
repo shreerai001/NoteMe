@@ -1,6 +1,6 @@
-﻿using NoteMe.Data;
+﻿using Microsoft.EntityFrameworkCore;
+using NoteMe.Data;
 using NoteMe.Models;
-using Microsoft.EntityFrameworkCore;
 
 namespace NoteMe.Services;
 
@@ -12,6 +12,12 @@ public class NoteService : INoteService, IDisposable
     public NoteService(NoteMeContext context)
     {
         _context = context;
+    }
+
+    public void Dispose()
+    {
+        Dispose(true);
+        GC.SuppressFinalize(this);
     }
 
     public List<Note> GetAllNotes()
@@ -29,13 +35,13 @@ public class NoteService : INoteService, IDisposable
             .FirstOrDefault(n => n.Id == id);
     }
 
-    public async Task<Note> AddNoteAsync(string title, string summary, string details, bool generateSummaryIfEmpty = true)
+    public async Task<Note> AddNoteAsync(string title, string summary, string details,
+        bool generateSummaryIfEmpty = true)
     {
         if (string.IsNullOrWhiteSpace(title))
             throw new ArgumentException("Note title cannot be empty or whitespace.", nameof(title));
 
         if (generateSummaryIfEmpty && string.IsNullOrWhiteSpace(summary) && !string.IsNullOrWhiteSpace(details))
-        {
             try
             {
                 summary = await GenerateSummaryFromDetailsAsync(details);
@@ -44,7 +50,6 @@ public class NoteService : INoteService, IDisposable
             {
                 summary = string.Empty;
             }
-        }
 
         var note = new Note
         {
@@ -91,20 +96,11 @@ public class NoteService : INoteService, IDisposable
         return await apiHelper.GenerateSummaryAsync(details);
     }
 
-    public void Dispose()
-    {
-        Dispose(true);
-        GC.SuppressFinalize(this);
-    }
-
     protected virtual void Dispose(bool disposing)
     {
         if (!_disposed)
         {
-            if (disposing)
-            {
-                _context.Dispose();
-            }
+            if (disposing) _context.Dispose();
             _disposed = true;
         }
     }

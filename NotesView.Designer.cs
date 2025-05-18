@@ -1,6 +1,6 @@
 ﻿namespace NoteMe
 {
-    partial class Form1
+    partial class NotesView
     {
         private System.ComponentModel.IContainer components = null;
 
@@ -26,7 +26,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
 
-            // Modern font and colors
             var modernFont = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BackColor = System.Drawing.Color.FromArgb(245, 247, 250);
 
@@ -79,7 +78,6 @@
             this.listBoxNotes.TabIndex = 0;
             this.listBoxNotes.SelectedIndexChanged += new System.EventHandler(this.listBoxNotes_SelectedIndexChanged);
 
-            // Adjusted vertical spacing for better alignment
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(220, 15);
             this.label1.Name = "label1";
@@ -164,7 +162,7 @@
             this.Controls.Add(this.label3);
             this.MinimumSize = new System.Drawing.Size(800, 500);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Sizable;
-            this.Name = "Form1";
+            this.Name = "NotesView";
             this.Text = "NoteMe";
             this.ResumeLayout(false);
             this.PerformLayout();
