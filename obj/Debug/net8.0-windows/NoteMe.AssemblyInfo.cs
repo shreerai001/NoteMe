@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("NoteMe")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+08b37c87e329accc5d2376720c88d99e305b2b1e")]
 [assembly: System.Reflection.AssemblyProductAttribute("NoteMe")]
 [assembly: System.Reflection.AssemblyTitleAttribute("NoteMe")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

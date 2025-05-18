@@ -124,3 +124,4 @@ C:\Users\shree\RiderProjects\NoteMe\bin\Debug\net8.0-windows\DotNetEnv.dll
 C:\Users\shree\RiderProjects\NoteMe\bin\Debug\net8.0-windows\Microsoft.Extensions.Configuration.dll
 C:\Users\shree\RiderProjects\NoteMe\bin\Debug\net8.0-windows\Sprache.dll
 C:\Users\shree\RiderProjects\NoteMe\bin\Debug\net8.0-windows\.env
+C:\Users\shree\RiderProjects\NoteMe\obj\Debug\net8.0-windows\NoteMe.sourcelink.json
